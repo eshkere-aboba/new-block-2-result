@@ -1,5 +1,9 @@
 @use 'variables' as *;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-width: 320px;
   min-height: 100dvh;
@@ -10,10 +14,15 @@ body {
   color: $text-color-primary;
   display: flex;
   flex-direction: column;
+
+  &.disable-scroll {
+    overflow: hidden;
+  }
 }
 
 section {
   padding: 120px 0;
+  scroll-margin-top: 60px;
 }
 
 .container {
