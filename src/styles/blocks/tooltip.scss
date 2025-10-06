@@ -1,0 +1,58 @@
+@use '../variables' as *;
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  bottom: 0.5rem;
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    background-color: $controls-bg-tertiary;
+    border-radius: 50%;
+
+    img {
+      transform: translateX(-1px);
+    }
+  }
+
+  &__text {
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    padding: 15px 20px;
+    background-color: $bg-color-primary;
+    color: $text-color-primary;
+    border-radius: 5px;
+    white-space: normal;
+    word-break: break-word;
+    max-width: 260px;
+    width: max-content;
+    font-size: 16px;
+    font-weight: 400;
+    z-index: 10;
+    display: none;
+    pointer-events: none;
+    box-shadow: $shadow-light;
+  }
+
+  &:hover {
+    .tooltip__text {
+      display: block;
+      pointer-events: auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .tooltip {
+    &__text {
+      transform: translateX(-50%);
+    }
+  }
+}
