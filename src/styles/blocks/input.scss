@@ -1,0 +1,51 @@
+@use '../variables' as *;
+
+.input-field {
+  position: relative;
+  display: flex;
+
+  &__input {
+    width: 100%;
+    padding: 18px 20px;
+    background-color: $controls-bg-quaternary;
+    border: 1px solid $controls-bg-quaternary;
+    border-radius: 5px;
+    font-size: 18px;
+
+    &:focus {
+      border-color: $controls-bg-secondary;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: $text-color-tertiary;
+    }
+
+    &--error {
+      border-color: $controls-color-error;
+    }
+  }
+
+  &__error-text {
+    display: none;
+    position: absolute;
+    left: 20px;
+    top: 3px;
+    font-size: 12px;
+    color: $controls-color-error;
+  }
+
+  &:has(.input-field__input--error) {
+    .input-field__error-text {
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .input-field {
+    &__input {
+      padding: 16px 20px;
+    }
+  }
+}

@@ -139,6 +139,58 @@
           </div>
         </div>
       </section>
+
+      <section class="form-section">
+        <div class="container">
+          <div class="form-section__content">
+            <div class="form-section__info form-info">
+              <h2 class="form-info__title">Запишитесь на курс со скидкой 10%</h2>
+              <p class="form-info__subtitle">Акция действительна до 10 марта 2022 года</p>
+            </div>
+            <form id="form" class="form-section__form form">
+              <div class="input-field">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="input-field__input"
+                  placeholder="Имя"
+                  autocomplete="true"
+                  aria-label="Имя"
+                />
+                <span id="name-error" class="input-field__error-text">Введите имя</span>
+              </div>
+              <div class="input-field">
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="input-field__input"
+                  placeholder="Телефон"
+                  autocomplete="true"
+                  aria-label="Телефон"
+                />
+                <span id="phone-error" class="input-field__error-text">Введите телефон</span>
+              </div>
+              <div class="input-field">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="input-field__input"
+                  placeholder="Email"
+                  autocomplete="true"
+                  aria-label="Email"
+                />
+                <span id="email-error" class="input-field__error-text">Введите email</span>
+              </div>
+              <button id="form-submit" class="button button--dark form__btn">
+                Оформить заявку
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
