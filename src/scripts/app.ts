@@ -3,3 +3,4 @@ import '../styles/main.scss';
 
 import './burger.js';
 import './form.js';
+import './slider.js';
