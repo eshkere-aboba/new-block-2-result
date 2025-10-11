@@ -1,0 +1,115 @@
+@use '../variables' as *;
+
+.teacher-modal {
+  width: 860px;
+  height: 688px;
+
+  .teacher-modal-top {
+    display: flex;
+    gap: 40px;
+
+    &__image {
+      width: 160px;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    .teacher-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      &__name {
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      &__role {
+        font-size: 18px;
+        color: $text-color-tertiary;
+      }
+
+      .teacher-social {
+        display: flex;
+        gap: 10px;
+
+        &__link {
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+
+  .teacher-modal-bottom {
+    margin-top: 20px;
+    position: relative;
+
+    .teacher-tab-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid $controls-bg-tertiary;
+
+      &__btn {
+        padding: 20px 0;
+        text-align: left;
+        font-size: 20px;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $text-color-tertiary;
+        }
+
+        &--active {
+          color: $controls-bg-primary;
+
+          &:hover {
+            color: $controls-bg-primary-hover;
+          }
+        }
+      }
+    }
+
+    .teacher-tab-content {
+      display: none;
+      overflow-y: auto;
+      margin-top: 20px;
+      max-height: 354px;
+      padding-bottom: 40px;
+
+      &--active {
+        display: block;
+      }
+
+      &__title {
+        font-size: 24px;
+        font-weight: 600;
+
+        &:not(:first-child) {
+          margin-top: 40px;
+        }
+      }
+
+      &__paragraph {
+        font-size: 20px;
+
+        &:not(:first-child) {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 98%;
+      height: 40px;
+      background: linear-gradient(0deg, #ffffff 0%, #ffffff00 100%);
+    }
+  }
+}
