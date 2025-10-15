@@ -6,3 +6,4 @@ import './form.js';
 import './slider.js';
 import './modal.js';
 import './tabs.js';
+import './select.js';
