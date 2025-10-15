@@ -1,0 +1,45 @@
+@use '../variables' as *;
+
+.select {
+  position: relative;
+  width: 100%;
+  color: $controls-color-primary;
+
+  &__btn {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: $controls-bg-primary;
+    line-height: 1.6;
+  }
+
+  &__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 3px);
+    z-index: 1;
+    background: transparent;
+    list-style: none;
+    flex-direction: column;
+    gap: 3px;
+
+    &:not(&[hidden]) {
+      display: flex;
+    }
+
+    & [role='option'] {
+      padding: 10px;
+      cursor: pointer;
+      background-color: $controls-bg-primary;
+      text-align: center;
+
+      &[aria-selected='true'] {
+        background-color: $controls-bg-primary-hover;
+      }
+    }
+  }
+}

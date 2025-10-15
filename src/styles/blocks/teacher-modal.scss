@@ -12,6 +12,7 @@
       width: 160px;
       height: auto;
       border-radius: 20px;
+      align-self: flex-start;
     }
 
     .teacher-info {
@@ -47,6 +48,10 @@
   .teacher-modal-bottom {
     margin-top: 20px;
     position: relative;
+
+    &__select {
+      display: none;
+    }
 
     .teacher-tab-buttons {
       display: grid;
@@ -110,6 +115,89 @@
       width: 98%;
       height: 40px;
       background: linear-gradient(0deg, #ffffff 0%, #ffffff00 100%);
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .teacher-modal {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .teacher-modal {
+    height: 100%;
+
+    .teacher-modal-top {
+      gap: 10px;
+
+      &__image {
+        width: 60px;
+        border-radius: 5px;
+      }
+
+      .teacher-info {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+
+        &__name {
+          font-size: 16px;
+        }
+
+        &__role {
+          font-size: 12px;
+          line-height: 1.4;
+        }
+
+        .teacher-social {
+          display: flex;
+          gap: 5px;
+        }
+      }
+    }
+
+    .teacher-modal-bottom {
+      .teacher-tab-buttons {
+        display: none;
+      }
+
+      &__select {
+        display: block;
+      }
+
+      .teacher-tab-content {
+        display: none;
+        overflow-y: unset;
+        margin-top: 30px;
+        padding-bottom: 30px;
+        max-height: unset;
+
+        &--active {
+          display: block;
+        }
+
+        &__title {
+          font-size: 16px;
+
+          &:not(:first-child) {
+            margin-top: 20px;
+          }
+        }
+
+        &__paragraph {
+          font-size: 14px;
+
+          &:not(:first-child) {
+            margin-top: 10px;
+          }
+        }
+      }
+
+      &:after {
+        position: fixed;
+      }
     }
   }
 }

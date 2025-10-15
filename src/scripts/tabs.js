@@ -1,14 +1,25 @@
 const tabButtons = document.querySelectorAll('.teacher-tab-buttons__btn');
+const selectOptions = document.querySelectorAll('#select-list li');
 const tabContents = document.querySelectorAll('.teacher-tab-content');
 const modalBackdrop = document.querySelector('.modal__backdrop');
 const closeModalBtn = document.querySelector('.modal__close-btn');
+const selectBtnText = document.querySelector('#select-btn .select__selected-text');
 
 const setButtonActive = (clickedButton) => {
   tabButtons.forEach((btn) => {
     btn.classList.remove('teacher-tab-buttons__btn--active');
   });
+  selectOptions.forEach((option) => {
+    option.setAttribute('aria-selected', 'false');
+  });
 
   clickedButton.classList.add('teacher-tab-buttons__btn--active');
+
+  const selectedOption = document.querySelector(
+    `#select-list li[data-tab="${clickedButton.getAttribute('data-tab')}"]`,
+  );
+  selectedOption.setAttribute('aria-selected', 'true');
+  selectBtnText.innerText = selectedOption.innerText.trim();
 };
 
 const setContentActive = (dataTab) => {
